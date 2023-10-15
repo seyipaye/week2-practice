@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>FizzBuzz</title>
+    <style>
+        .fizz {
+            color: red;
+        }
+        .buzz {
+            color: blue;
+        }
+    </style>
 </head>
-
 <body>
     <h1>FizzBuzz List</h1>
     <ul>
         {% for number in numbers %}
-        <li>
-            {% if number % 3 == 0 and number % 5 == 0 %}
-            FizzBuzz
-            {% elif number % 3 == 0 %}
-            Fizz
-            {% elif number % 5 == 0 %}
-            Buzz
-            {% else %}
-            {{ number }}
-            {% endif %}
-        </li>
+            <li>
+                {% if number % 3 == 0 and number % 5 == 0 %}
+                    <span class="fizzbuzz">FizzBuzz</span>
+                {% elif number % 3 == 0 %}
+                    <span class="fizz">Fizz</span>
+                {% elif number % 5 == 0 %}
+                    <span class="buzz">Buzz</span>
+                {% else %}
+                    {{ number }}
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
 </body>
-
 </html>
